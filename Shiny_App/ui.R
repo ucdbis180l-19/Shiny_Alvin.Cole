@@ -28,11 +28,11 @@ shinyUI(fluidPage(
        radioButtons("group",
                     "Choose either population of region:",
                     c("assignedPop","Region")
-       ),
+       )),
     
     # Show a plot of the generated distribution
     mainPanel(
        plotOutput("violinPlot")
     )
   )
-)))
+))
