@@ -13,21 +13,26 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Rice Trait over Different Regions "),
+  
+  #helpful information on the app 
+  helpText("This is app that can allow the users to select a trait that they want from the rice data and it will plot the selected trait either over different populations or regions."),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("bins",
-                   "Number of bins:",
-                   min = 1,
-                   max = 50,
-                   value = 30)
+       radioButtons("trait",
+                   "Choose a trait:",
+                   c("Alu.Tol","Plant Height","Panicle Length","Seed length","seed width")
     ),
+       radioButtons("group",
+                    "Choose either population of region:",
+                    c("assignedPop","Region")
+       ),
     
     # Show a plot of the generated distribution
     mainPanel(
-       plotOutput("distPlot")
+       plotOutput("violinPlot")
     )
   )
-))
+)))
