@@ -10,7 +10,7 @@
 library(shiny)
 library(tidyverse)
 
-rice_data <- read.table("Rice_Pheno.txt")
+rice_data <- read.table("Rice_Pheno.txt",header=TRUE)
 
 shinyServer(function(input, output) {
    
