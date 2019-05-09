@@ -13,17 +13,20 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Rice Trait over Different Populations or Regions "),
+  titlePanel("Rice Traits over Different Populations or Regions "),
   
   #helpful information on the app 
-  helpText("This is app that can allow the users to select a trait that they want from the rice data and it will plot the selected trait either over different populations or regions."),
+  helpText("This is an app that allows the user to visualize a trait from rice samples from around the world. Users can group the data by the region the data was collected from or by their ancestral population as inferred by fastStructure."),
   
-  # Sidebar with a slider input for number of 
   sidebarLayout(
     sidebarPanel(
        radioButtons("trait",
                    "Choose a trait:",
-                   c("Alu.Tol","Plant.height","Panicle.length","Seed.length","Seed.width")
+                   c("Aluminum Tolerance" = "Alu.Tol",
+                     "Plant height" = "Plant.height",
+                     "Panicle length" = "Panicle.length",
+                     "Seed length" = "Seed.length",
+                     "Seed width" = "Seed.width")
     ),
        radioButtons("group",
                     "Choose either population or region:",
