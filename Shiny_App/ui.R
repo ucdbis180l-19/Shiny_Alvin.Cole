@@ -18,7 +18,7 @@ shinyUI(fluidPage(
   #helpful information on the app 
   helpText("This is app that can allow the users to select a trait that they want from the rice data and it will plot the selected trait either over different populations or regions."),
   
-  # Sidebar with a slider input for number of bins 
+  # Sidebar with a slider input for number of 
   sidebarLayout(
     sidebarPanel(
        radioButtons("trait",
