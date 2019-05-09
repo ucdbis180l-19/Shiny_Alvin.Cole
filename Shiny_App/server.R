@@ -14,7 +14,7 @@ rice_data <- read.table("Rice_Pheno.txt",header=TRUE)
 
 shinyServer(function(input, output) {
    
-  output$plot <- renderPlot({
+  output$violinPlot <- renderPlot({
     
     pl <- ggplot(data=rice_data,
                  aes_string(x=input$group,
