@@ -8,18 +8,18 @@
 #
 
 library(shiny)
+library(tidyverse)
 
-# Define server logic required to draw a histogram
+rice_data <- read.table("Rice_Pheno.txt",header=TRUE)
+
 shinyServer(function(input, output) {
    
-  output$distPlot <- renderPlot({
+  output$violinPlot <- renderPlot({
     
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
+    pl <- ggplot(data=rice_data,
+                 aes_string(x=input$group,
+                            y=input$trait))
+    pl + geom_violin()
     
   })
   
