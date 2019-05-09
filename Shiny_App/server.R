@@ -11,7 +11,7 @@ library(shiny)
 library(tidyverse)
 
 rice_data <- read.table("Rice_Pheno.txt",header=TRUE)
-rice_data$assignedPop_str <- as.character(rice_data$assignedPop)
+rice_data$Population <- as.character(rice_data$assignedPop)
 
 shinyServer(function(input, output) {
    
