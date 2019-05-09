@@ -13,7 +13,7 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Rice Trait over Different Regions "),
+  titlePanel("Rice Trait over Different Populations or Regions "),
   
   #helpful information on the app 
   helpText("This is app that can allow the users to select a trait that they want from the rice data and it will plot the selected trait either over different populations or regions."),
@@ -23,10 +23,10 @@ shinyUI(fluidPage(
     sidebarPanel(
        radioButtons("trait",
                    "Choose a trait:",
-                   c("Alu.Tol","Plant Height","Panicle Length","Seed length","seed width")
+                   c("Alu.Tol","Plant.height","Panicle.length","Seed.length","Seed.width")
     ),
        radioButtons("group",
-                    "Choose either population of region:",
+                    "Choose either population or region:",
                     c("assignedPop","Region")
        )),
     
